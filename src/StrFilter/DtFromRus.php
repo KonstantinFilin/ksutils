@@ -8,16 +8,14 @@ namespace KsUtils\StrFilter;
  */
 class DtFromRus implements \KsUtils\StrFilter
 {
-    public function filter($str) 
+    public function filter($str)
     {
         $dtObj = date_create_from_format("d.m.Y", $str);
-        
-        if(!$dtObj) {
+
+        if (!$dtObj) {
             return "";
         }
-        
+
         return $dtObj->format("Y-m-d");
     }
 }
-
-?>

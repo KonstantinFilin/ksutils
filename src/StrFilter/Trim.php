@@ -1,7 +1,7 @@
 <?php
 
     namespace KsUtils\StrFilter;
-    
+
     /**
      * Description of Trim
      *
@@ -11,12 +11,12 @@
     {
         public function filter($str)
         {
-            if(is_null($str)) {
+            if (is_null($str)) {
                 return null;
             }
-            
-            if(is_array($str)) {
-                foreach($str as $k=>$v) {
+
+            if (is_array($str)) {
+                foreach ($str as $k=>$v) {
                     $str[$k] = trim($v);
                 }
 
@@ -26,5 +26,3 @@
             return trim($str);
         }
     }
-
-?>

@@ -1,5 +1,5 @@
 <?php
-    
+
     namespace KsUtils;
 
     /**
@@ -10,5 +10,3 @@
     {
         function filter($str);
     }
-
-?>

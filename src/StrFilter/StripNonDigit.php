@@ -1,7 +1,7 @@
 <?php
 
     namespace KsUtils\StrFilter;
-    
+
     /**
      * Description of TrimNonDigit
      *
@@ -14,5 +14,3 @@
             return preg_replace("/[\D]+/", "", $str);
         }
     }
-
-?>

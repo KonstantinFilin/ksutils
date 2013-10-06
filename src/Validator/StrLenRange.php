@@ -11,13 +11,15 @@ class StrLenRange extends \KsUtils\Validator
 {
     protected $min;
     protected $max;
-    
-    function __construct($min, $max) {
+
+    public function __construct($min, $max)
+    {
         $this->min = $min;
         $this->max = $max;
     }
-    
-    public function getErrorMessage($errValue) {
+
+    public function getErrorMessage($errValue)
+    {
         return sprintf(
             "Длина строки должна быть от %u до %u символов",
             $this->min,
@@ -25,12 +27,10 @@ class StrLenRange extends \KsUtils\Validator
         );
     }
 
-    public function check($value) 
+    public function check($value)
     {
         $len = strlen($value);
-        
+
         return $len >= $this->min && $len <= $this->max;
     }
 }
-
-?>

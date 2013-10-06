@@ -9,15 +9,13 @@ namespace KsUtils\Validator;
  */
 class NotEmpty extends \KsUtils\Validator
 {
-    public function check($value) 
+    public function check($value)
     {
         return !is_null($value) && trim($value) !== "";
     }
 
-    public function getErrorMessage($errValue) 
+    public function getErrorMessage($errValue)
     {
         return "Не может быть пустым";
     }
 }
-
-?>

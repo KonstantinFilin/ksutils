@@ -7,9 +7,8 @@ namespace KsUtils;
  *
  * @author kostya
  */
-abstract class Validator {
-    abstract function getErrorMessage($errValue);
-    abstract function check($value);
+abstract class Validator
+{
+    abstract public function getErrorMessage($errValue);
+    abstract public function check($value);
 }
-
-?>

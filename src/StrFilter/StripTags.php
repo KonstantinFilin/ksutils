@@ -11,8 +11,8 @@
     {
         public function filter($str)
         {
-            if(is_array($str)) {
-                foreach($str as $k=>$v) {
+            if (is_array($str)) {
+                foreach ($str as $k=>$v) {
                     $str[$k] = strip_tags($v);
                 }
 
@@ -22,5 +22,3 @@
             return strip_tags($str);
         }
     }
-
-?>

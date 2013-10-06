@@ -66,5 +66,3 @@
             $this->curPage = $curPage;
         }
     }
-
-?>
