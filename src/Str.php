@@ -117,15 +117,15 @@
             }*/
 
             $str = preg_replace('~[^-a-z0-9_]+~u', $defaultChar, $str);
-            return $str;
+            return trim($str, $defaultChar);
         }
 
         /**
-         * Encodes variable to a json and russian chars into utf codes
+         * Encodes variable to a json and utf codes into russian chars
          * @param mixed $data The value being encoded. Can be any type except a resource.
          * @return string String containing the JSON representation of value
          */
-        static function json_encode($data)
+        static function jsonEncode($data)
         {
             $arr_replace_utf = array('\u0410', '\u0430','\u0411','\u0431','\u0412','\u0432',
             '\u0413','\u0433','\u0414','\u0434','\u0415','\u0435','\u0401','\u0451','\u0416',
