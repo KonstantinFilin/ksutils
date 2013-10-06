@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class KsUtils\Str | KsUtils</title>
+
+	<script type="text/javascript" src="resources/combined.js?394153670"></script>
+	<script type="text/javascript" src="elementlist.js?4028649993"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-KsUtils.html">KsUtils<span></span></a>
+						<ul>
+				<li><a href="namespace-KsUtils.StrFilter.html">StrFilter</a>
+						</li>
+				<li><a href="namespace-KsUtils.Validator.html">Validator</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-KsUtils.Dt.html">Dt</a></li>
+				<li><a href="class-KsUtils.DtTest.html">DtTest</a></li>
+				<li><a href="class-KsUtils.Pager.html">Pager</a></li>
+				<li><a href="class-KsUtils.PagerTest.html">PagerTest</a></li>
+				<li class="active"><a href="class-KsUtils.Str.html">Str</a></li>
+				<li><a href="class-KsUtils.StrTest.html">StrTest</a></li>
+				<li><a href="class-KsUtils.Validator.html">Validator</a></li>
+				<li><a href="class-KsUtils.ValidatorTest.html">ValidatorTest</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-KsUtils.StrFilter.html">StrFilter</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-KsUtils.html" title="Summary of KsUtils"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Str</h1>
+
+
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-KsUtils.html">KsUtils</a><br />
+		
+
+		<b>Located at</b> src/Str.php<br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="endsWith" id="_endsWith">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_endsWith">#</a>
+		<code>endsWith( <span>string <var>$needle</var></span>, <span>string <var>$str</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Checks if string ends with another string</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Checks if string ends with another string</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$needle</var></dt>
+					<dd><code>string</code><br>$needle Supposed end</dd>
+					<dt><var>$str</var></dt>
+					<dd><code>string</code><br>$str Tested string</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>TRUE if string ends with another string, FALSE otherwise<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="random" id="_random">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_random">#</a>
+		<code>random( <span>integer <var>$charsAmount</var></span>, <span>string <var>$chars</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a random string</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a random string</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$charsAmount</var></dt>
+					<dd><code>integer</code><br>$charsAmount String's length</dd>
+					<dt><var>$chars</var></dt>
+					<dd><code>string</code><br>$chars Chars in the random string. Default is a-z, digits and "_" (underscore)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Random string with specified length<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getSubstrAfterLast" id="_getSubstrAfterLast">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getSubstrAfterLast">#</a>
+		<code>getSubstrAfterLast( <span>string <var>$char</var></span>, <span>string <var>$str</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns substring after last occurance of $char. Search is case
+insensitive</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns substring after last occurance of $char. Search is case
+insensitive</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$char</var></dt>
+					<dd><code>string</code><br>$char What to search</dd>
+					<dt><var>$str</var></dt>
+					<dd><code>string</code><br>$str Where to search</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Resulting string<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="translit" id="_translit">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_translit">#</a>
+		<code>translit( <span>string <var>$string</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Replaces cyrillic chars to latin</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Replaces cyrillic chars to latin</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$string</var></dt>
+					<dd><code>string</code><br>$string Non-latin string</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Latin string<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="slugabize" id="_slugabize">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_slugabize">#</a>
+		<code>slugabize( <span>string <var>$str</var></span>, <span>string <var>$defaultChar</var> = <span class="php-quote">&quot;&quot;</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a slugabized string (for example in url usage)</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a slugabized string (for example in url usage)</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$str</var></dt>
+					<dd><code>string</code><br>$str Unslugabized string</dd>
+					<dt><var>$defaultChar</var></dt>
+					<dd><code>string</code><br>$defaultChar Replacement for wrong chars</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Slugabized string. Contains only chars: a-z,0-9,-,_<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="json_encode" id="_json_encode">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_json_encode">#</a>
+		<code>json_encode( <span>mixed <var>$data</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Encodes variable to a json and russian chars into utf codes</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Encodes variable to a json and russian chars into utf codes</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd><code>mixed</code><br>$data The value being encoded. Can be any type except a resource.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>String containing the JSON representation of value<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="jsonBeautify" id="_jsonBeautify">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_jsonBeautify">#</a>
+		<code>jsonBeautify( <span>string <var>$json</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Use whitespace to format json string</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Use whitespace to format json string</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$json</var></dt>
+					<dd><code>string</code><br>$json Unformatted json string</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Formatted json string<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		KsUtils API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

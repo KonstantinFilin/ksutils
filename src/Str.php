@@ -4,12 +4,26 @@
 
     class Str
     {
+        /**
+         * Checks if string ends with another string
+         * @param string $needle Supposed end
+         * @param string $str Tested string
+         * @return boolean TRUE if string ends with another string, FALSE
+         *              otherwise
+         */
         public static function endsWith($needle, $str)
         {
             $end = substr($str, -1*strlen($needle));
             return $end == $needle;
         }
 
+        /**
+         * Returns a random string
+         * @param int $charsAmount String's length
+         * @param string $chars Chars in the random string. Default is a-z,
+         *          digits and "_" (underscore)
+         * @return string Random string with specified length
+         */
         public static function random($charsAmount, $chars = array())
         {
             if(!$chars) {
@@ -35,12 +49,24 @@
             return $str;
         }
 
+        /**
+         * Returns substring after last occurance of $char. Search is
+         * case insensitive
+         * @param string $char What to search
+         * @param string $str Where to search
+         * @return string Resulting string
+         */
         static function getSubstrAfterLast($char, $str)
         {
             $pos = strripos($str, $char);
             return $pos ? substr($str, $pos+1) : null;
         }
 
+        /**
+         * Replaces cyrillic chars to latin
+         * @param string $string Non-latin string
+         * @return string Latin string
+         */
         static function translit($string) {
             $converter = array(
                 'а' => 'a',   'б' => 'b',   'в' => 'v',
@@ -75,28 +101,30 @@
             return strtr($string, $converter);
         }
 
-        static function slugabize($str) {
+        /**
+         * Returns a slugabized string (for example in url usage)
+         * @param string $str Unslugabized string
+         * @param string $defaultChar Replacement for wrong chars
+         * @return string Slugabized string. Contains only chars: a-z,0-9,-,_
+         */
+        static function slugabize($str, $defaultChar="") {
 
-            // в нижний регистр
-            //$str = strtolower($str);
             $str = mb_strtolower($str, 'UTF-8');
-
-            // mb_strtolower($str);
-
-            // переводим в транслит
             $str = self::translit($str);
 
-            if(!preg_match('|^[A-Za-z0-9\s_\.-]+$|', $str)) {
+            /*if(!preg_match('|^[A-Za-z0-9\s_\.-]+$|', $str)) {
                 die('Unknown symbol in string: ' . $str);
-            }
+            }*/
 
-            // заменям все ненужное нам на "-"
-            $str = preg_replace('~[^-a-z0-9_]+~u', '-', $str);
-            // удаляем начальные и конечные '-'
-            $str = trim($str, "-");
+            $str = preg_replace('~[^-a-z0-9_]+~u', $defaultChar, $str);
             return $str;
         }
 
+        /**
+         * Encodes variable to a json and russian chars into utf codes
+         * @param mixed $data The value being encoded. Can be any type except a resource.
+         * @return string String containing the JSON representation of value
+         */
         static function json_encode($data)
         {
             $arr_replace_utf = array('\u0410', '\u0430','\u0411','\u0431','\u0412','\u0432',
@@ -114,10 +142,15 @@
             'Щ','щ','Ъ','ъ','Ы','ы','Ь','ь','Э','э','Ю','ю','Я','я');
 
             $str1 = json_encode($data);
-            $str2 = str_replace($arr_replace_utf,$arr_replace_cyr,$str1);
+            $str2 = str_replace($arr_replace_utf, $arr_replace_cyr, $str1);
             return $str2;
         }
 
+        /**
+         * Use whitespace to format json string
+         * @param string $json Unformatted json string
+         * @return string Formatted json string
+         */
         static function jsonBeautify($json)
         {
             $result      = '';
