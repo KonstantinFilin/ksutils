@@ -2,35 +2,59 @@
 
     namespace KsUtils;
 
+    /**
+     * Date and time utils
+     */
     class Dt
     {
-        static function rus2int($dt)
+        /**
+         * Converts date string from one format to another, f.e.
+         * 31.12.2013 <-> 2013-12-31
+         * @param sting $str Input date string
+         * @param string $formatIn Format of input date string
+         * @param string $formatOut Format of output date string
+         * @return string|null Output date string or null if error
+         */
+        static function convert($str, $formatIn, $formatOut)
         {
-            if (!$dt) {
+            if(!$str) {
                 return null;
             }
 
-            $date = \DateTime::createFromFormat('d.m.Y', $dt);
+            $date = \DateTime::createFromFormat($formatIn, $str);
 
-            if (!$date) {
+            if(!$date) {
                 return null;
             }
 
-            return $date->format('Y-m-d');
+            return $date->format($formatOut);
         }
 
-        static function int2rus($dt)
+        /**
+         * Converts date string from format 31.12.2013 to format 2013-12-31.
+         * Shortcat for convert(...) method.
+         * @param sting $str Input date string
+         * @param string $formatIn Format of input date string
+         * @param string $formatOut Format of output date string
+         * @return string|null Output date string or null if error
+         */
+        static function rus2int($str, $formatIn="d.m.Y", $formatOut="Y-m-d")
         {
-            if (!$dt) {
-                return null;
-            }
+            return self::convert($str, $formatIn, $formatOut);
+        }
 
-            $date = \DateTime::createFromFormat("Y-m-d", $dt);
-
-            if (!$date) {
-                return null;
-            }
-
-            return $date->format("d.m.Y");
+        /**
+         * Converts date string from format 2013-12-31 to format 31.12.2013.
+         * Shortcat for convert(...) method.
+         * @param sting $str Input date string
+         * @param string $formatIn Format of input date string
+         * @param string $formatOut Format of output date string
+         * @return string|null Output date string or null if error
+         */
+        static function int2rus($dt, $formatIn="Y-m-d", $formatOut="d.m.Y")
+        {
+            return self::convert($dt, $formatIn, $formatOut);
         }
     }
+
+?>
