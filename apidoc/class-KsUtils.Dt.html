@@ -7,7 +7,7 @@
 	<title>Class KsUtils\Dt | KsUtils</title>
 
 	<script type="text/javascript" src="resources/combined.js?394153670"></script>
-	<script type="text/javascript" src="elementlist.js?4028649993"></script>
+	<script type="text/javascript" src="elementlist.js?1859775265"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -38,13 +38,9 @@
 			<h3>Classes</h3>
 			<ul>
 				<li class="active"><a href="class-KsUtils.Dt.html">Dt</a></li>
-				<li><a href="class-KsUtils.DtTest.html">DtTest</a></li>
 				<li><a href="class-KsUtils.Pager.html">Pager</a></li>
-				<li><a href="class-KsUtils.PagerTest.html">PagerTest</a></li>
 				<li><a href="class-KsUtils.Str.html">Str</a></li>
-				<li><a href="class-KsUtils.StrTest.html">StrTest</a></li>
 				<li><a href="class-KsUtils.Validator.html">Validator</a></li>
-				<li><a href="class-KsUtils.ValidatorTest.html">ValidatorTest</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
@@ -94,6 +90,11 @@
 	<h1>Class Dt</h1>
 
 
+	<div class="description">
+	
+<p>Date and time utils</p>
+
+	</div>
 
 
 
@@ -116,28 +117,95 @@
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="convert" id="_convert">
+
+		<td class="attributes"><code>
+			 public static
+			string|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_convert">#</a>
+		<code>convert( <span>sting <var>$str</var></span>, <span>string <var>$formatIn</var></span>, <span>string <var>$formatOut</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Converts date string from one format to another, f.e. 31.12.2013 &lt;-&gt;
+2013-12-31</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Converts date string from one format to another, f.e. 31.12.2013 &lt;-&gt;
+2013-12-31</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$str</var></dt>
+					<dd><code>sting</code><br>$str Input date string</dd>
+					<dt><var>$formatIn</var></dt>
+					<dd><code>string</code><br>$formatIn Format of input date string</dd>
+					<dt><var>$formatOut</var></dt>
+					<dd><code>string</code><br>$formatOut Format of output date string</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string|null</code><br>Output date string or null if error<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="rus2int" id="_rus2int">
 
 		<td class="attributes"><code>
 			 public static
-			
+			string|null
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rus2int">#</a>
-		<code>rus2int( <span>mixed <var>$dt</var></span> )</code>
+		<code>rus2int( <span>sting <var>$str</var></span>, <span>string <var>$formatIn</var> = <span class="php-quote">&quot;d.m.Y&quot;</span></span>, <span>string <var>$formatOut</var> = <span class="php-quote">&quot;Y-m-d&quot;</span></span> )</code>
 
 		<div class="description short">
 			
+<p>Converts date string from format 31.12.2013 to format 2013-12-31. Shortcat
+for convert(...) method.</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Converts date string from format 31.12.2013 to format 2013-12-31. Shortcat
+for convert(...) method.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$str</var></dt>
+					<dd><code>sting</code><br>$str Input date string</dd>
+					<dt><var>$formatIn</var></dt>
+					<dd><code>string</code><br>$formatIn Format of input date string</dd>
+					<dt><var>$formatOut</var></dt>
+					<dd><code>string</code><br>$formatOut Format of output date string</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string|null</code><br>Output date string or null if error<br />
+				</div>
 
 
 
@@ -149,24 +217,43 @@
 
 		<td class="attributes"><code>
 			 public static
-			
+			string|null
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_int2rus">#</a>
-		<code>int2rus( <span>mixed <var>$dt</var></span> )</code>
+		<code>int2rus( <span>sting <var>$dt</var></span>, <span>string <var>$formatIn</var> = <span class="php-quote">&quot;Y-m-d&quot;</span></span>, <span>string <var>$formatOut</var> = <span class="php-quote">&quot;d.m.Y&quot;</span></span> )</code>
 
 		<div class="description short">
 			
+<p>Converts date string from format 2013-12-31 to format 31.12.2013. Shortcat
+for convert(...) method.</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Converts date string from format 2013-12-31 to format 31.12.2013. Shortcat
+for convert(...) method.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$dt</var></dt>
+					<dd><code>sting</code><br>$str Input date string</dd>
+					<dt><var>$formatIn</var></dt>
+					<dd><code>string</code><br>$formatIn Format of input date string</dd>
+					<dt><var>$formatOut</var></dt>
+					<dd><code>string</code><br>$formatOut Format of output date string</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string|null</code><br>Output date string or null if error<br />
+				</div>
 
 
 
