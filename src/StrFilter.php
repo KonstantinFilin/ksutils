@@ -10,5 +10,5 @@ interface StrFilter
     /**
      * Applying a filter
      */
-    function filter($str);
+    public function filter($str);
 }
