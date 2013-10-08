@@ -37,7 +37,7 @@ class Pager
      */
     protected $onpage;
 
-    function __construct()
+    public function __construct()
     {
         $this->curPage = 1;
         $this->pagesTotal = 1;
