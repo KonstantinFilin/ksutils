@@ -1,12 +1,14 @@
 <?php
 
-    namespace KsUtils;
+namespace KsUtils;
 
+/**
+ * Filtering string value
+ */
+interface StrFilter
+{
     /**
-     *
-     * @author ksf
+     * Applying a filter
      */
-    interface StrFilter
-    {
-        function filter($str);
-    }
+    function filter($str);
+}
