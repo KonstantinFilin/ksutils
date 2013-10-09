@@ -89,7 +89,7 @@
 
 	<div class="description">
 	
-<p>Description of StripTags</p>
+<p>Filter for stripping html tags from string</p>
 
 	</div>
 
@@ -116,8 +116,6 @@
 		<b>Namespace:</b> <a href="namespace-KsUtils.html">KsUtils</a>\<a href="namespace-KsUtils.StrFilter.html">StrFilter</a><br />
 		
 
-				<b>Author:</b>
-				ksf<br />
 		<b>Located at</b> src/StrFilter/StripTags.php<br />
 	</div>
 
@@ -129,28 +127,37 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_filter">#</a>
-		<code>filter( <span>mixed <var>$str</var></span> )</code>
+		<code>filter( <span>string|array <var>$str</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Applying a filter</p>
+<p>Clears html tags from source string</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Applying a filter</p>
+<p>Clears html tags from source string</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$str</var></dt>
+					<dd><code>string|array</code><br>$str Source string</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Filtered string<br />
+				</div>
 
 
 

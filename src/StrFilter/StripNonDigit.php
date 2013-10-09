@@ -1,16 +1,21 @@
 <?php
 
-    namespace KsUtils\StrFilter;
+namespace KsUtils\StrFilter;
 
+/**
+ * Filters all non digits
+ *
+ * @author ksf
+ */
+class StripNonDigit implements \KsUtils\StrFilter
+{
     /**
-     * Description of TrimNonDigit
-     *
-     * @author ksf
+     * Returns only digits from source string
+     * @param string $str Source string
+     * @return string Filtered string
      */
-    class StripNonDigit implements \KsUtils\StrFilter
+    public function filter($str)
     {
-        public function filter($str)
-        {
-            return preg_replace("/[\D]+/", "", $str);
-        }
+        return preg_replace("/[\D]+/", "", $str);
     }
+}

@@ -8,7 +8,7 @@ namespace KsUtils;
 interface StrFilter
 {
     /**
-     * Applying a filter
+     * Applying a filter. Returns filtered string
      */
     public function filter($str);
 }
