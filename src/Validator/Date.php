@@ -1,6 +1,7 @@
 <?php
 
 namespace KsUtils\Validator;
+
 /**
  * Description of Date
  *
@@ -10,7 +11,7 @@ class Date extends \KsUtils\Validator
 {
     protected $format;
 
-    public function __construct($format="Y-m-d")
+    public function __construct($format = "Y-m-d")
     {
         $this->format = $format;
     }

@@ -15,7 +15,7 @@ class StripTags implements \KsUtils\StrFilter
     public function filter($str)
     {
         if (is_array($str)) {
-            foreach ($str as $k=>$v) {
+            foreach ($str as $k => $v) {
                 $str[$k] = strip_tags($v);
             }
 

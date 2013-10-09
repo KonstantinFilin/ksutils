@@ -12,7 +12,7 @@ class Int extends \KsUtils\Validator
     protected $min;
     protected $max;
 
-    public function __construct($min=1, $max=1000000)
+    public function __construct($min = 1, $max = 1000000)
     {
         $this->min = $min;
         $this->max = $max;

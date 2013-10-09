@@ -21,7 +21,7 @@ class Trim implements \KsUtils\StrFilter
         }
 
         if (is_array($str)) {
-            foreach ($str as $k=>$v) {
+            foreach ($str as $k => $v) {
                 $str[$k] = trim($v);
             }
 
