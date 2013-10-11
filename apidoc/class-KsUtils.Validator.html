@@ -125,18 +125,18 @@
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="getErrorMessage" id="_getErrorMessage">
+	<tr data-order="getError" id="_getError">
 
 		<td class="attributes"><code>
-			abstract public 
-			
+			 public 
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getErrorMessage">#</a>
-		<code>getErrorMessage( <span>mixed <var>$errValue</var></span> )</code>
+		<a class="anchor" href="#_getError">#</a>
+		<code>getError( <span>mixed <var>$wrongValue</var></span> )</code>
 
 		<div class="description short">
 			
@@ -150,7 +150,16 @@
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$wrongValue</var></dt>
+					<dd><code>mixed</code><br>$wrongValue Value not passed validation</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Error message<br />
+				</div>
 
 
 
@@ -162,14 +171,14 @@
 
 		<td class="attributes"><code>
 			abstract public 
-			
+			boolean
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_check">#</a>
-		<code>check( <span>mixed <var>$value</var></span> )</code>
+		<code>check( <span>string <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -183,7 +192,16 @@
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$value</var></dt>
+					<dd><code>string</code><br>$value String to check</dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>True if value is valid and False otherwise<br />
+				</div>
 
 
 
@@ -204,6 +222,35 @@
 
 
 
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="errorMessage" id="$errorMessage">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+<var>$errorMessage</var>		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$errorMessage" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Error message when value is not valid</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Error message when value is not valid</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
 
 
 

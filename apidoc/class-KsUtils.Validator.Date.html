@@ -89,7 +89,7 @@
 
 	<div class="description">
 	
-<p>Description of Date</p>
+<p>Validator for a date string in different format</p>
 
 	</div>
 
@@ -121,8 +121,6 @@
 		<b>Namespace:</b> <a href="namespace-KsUtils.html">KsUtils</a>\<a href="namespace-KsUtils.Validator.html">Validator</a><br />
 		
 
-				<b>Author:</b>
-				kostya<br />
 		<b>Located at</b> src/Validator/Date.php<br />
 	</div>
 
@@ -141,7 +139,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code>__construct( <span>mixed <var>$format</var> = <span class="php-quote">&quot;Y-m-d&quot;</span></span> )</code>
+		<code>__construct( <span>string <var>$format</var> = <span class="php-quote">&quot;Y-m-d&quot;</span></span> )</code>
 
 		<div class="description short">
 			
@@ -151,6 +149,11 @@
 			
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$format</var></dt>
+					<dd><code>string</code><br>$format Format of the date</dd>
+				</dl></div>
 
 
 
@@ -163,63 +166,38 @@
 
 		<td class="attributes"><code>
 			 public 
-			
+			boolean
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_check">#</a>
-		<code>check( <span>mixed <var>$value</var></span> )</code>
+		<code>check( <span>string <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Checks a value</p>
-
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Checks a value</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$value</var></dt>
+					<dd><code>string</code><br>$value String to check</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>True if value is valid and False otherwise<br />
+				</div>
 
 
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getErrorMessage" id="_getErrorMessage">
-
-		<td class="attributes"><code>
-			 public 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getErrorMessage">#</a>
-		<code>getErrorMessage( <span>mixed <var>$errValue</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Returns error message</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Returns error message</p>
-
-
-
-
-
-
+				<h4>Inheritdoc</h4>
+				<div class="list">
+				</div>
 
 
 		</div>
@@ -227,6 +205,14 @@
 	</tr>
 	</table>
 
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-KsUtils.Validator.html#methods">KsUtils\Validator</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-KsUtils.Validator.html#_getError">getError()</a>
+		</code></td>
+	</tr>
+	</table>
 
 
 
@@ -243,7 +229,7 @@
 	<tr data-order="format" id="$format">
 		<td class="attributes"><code>
 			protected  
-			mixed
+			string
 		</code></td>
 
 		<td class="name">
@@ -254,16 +240,28 @@
 
 			<div class="description short">
 				
+<p>Format of the date</p>
+
 			</div>
 
 			<div class="description detailed hidden">
 				
+<p>Format of the date</p>
+
 
 			</div>
 		</div></td>
 	</tr>
 	</table>
 
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-KsUtils.Validator.html#properties">KsUtils\Validator</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-KsUtils.Validator.html#$errorMessage"><var>$errorMessage</var></a>
+		</code></td>
+	</tr>
+	</table>
 
 
 
