@@ -8,12 +8,28 @@ namespace KsUtils;
 abstract class Validator
 {
     /**
-     * Returns error message
+     * Error message when value is not valid
+     * @var string
      */
-    abstract public function getErrorMessage($errValue);
+    protected $errorMessage;
 
     /**
-     * Checks a value 
+     * Returns error message
+     * @param mixed $wrongValue Value not passed validation
+     * @return string Error message
+     */
+    public function getError($wrongValue)
+    {
+        return sprintf(
+            $this->errorMessage,
+            $wrongValue
+        );
+    }
+
+    /**
+     * Checks a value
+     * @param string $value String to check
+     * @return boolean True if value is valid and False otherwise
      */
     abstract public function check($value);
 }
