@@ -11,7 +11,7 @@ abstract class Validator
      * Error message when value is not valid
      * @var string
      */
-    protected $errorMessage;
+    protected $error;
 
     /**
      * Returns error message
@@ -21,7 +21,7 @@ abstract class Validator
     public function getError($wrongValue)
     {
         return sprintf(
-            $this->errorMessage,
+            $this->error,
             $wrongValue
         );
     }
@@ -30,9 +30,9 @@ abstract class Validator
      * Sets error message for validator
      * @param string $errorMessage Error message
      */
-    public function setErrorMessage($errorMessage)
+    public function setError($errorMessage)
     {
-        $this->errorMessage = $errorMessage;
+        $this->error = $errorMessage;
     }
 
     /**

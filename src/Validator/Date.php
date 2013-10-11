@@ -19,7 +19,7 @@ class Date extends \KsUtils\Validator
     public function __construct($format = "Y-m-d")
     {
         $this->format = $format;
-        $this->errorMessage = "Wrong date: %s";
+        $this->error = "Wrong date: %s";
     }
 
     /**
