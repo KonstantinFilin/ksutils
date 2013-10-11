@@ -27,6 +27,15 @@ abstract class Validator
     }
 
     /**
+     * Sets error message for validator
+     * @param string $errorMessage Error message
+     */
+    public function setErrorMessage($errorMessage)
+    {
+        $this->errorMessage = $errorMessage;
+    }
+
+    /**
      * Checks a value
      * @param string $value String to check
      * @return boolean True if value is valid and False otherwise
