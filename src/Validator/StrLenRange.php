@@ -25,7 +25,7 @@ class StrLenRange extends \KsUtils\Validator
         $this->max = $max;
 
         $this->error = sprintf(
-            "String length must be  between %d and %d, checked value: %%s",
+            "Must be string with length between %d and %d chars, checked value: %%s",
             $this->min,
             $this->max
         );
@@ -36,8 +36,11 @@ class StrLenRange extends \KsUtils\Validator
      */
     public function check($value)
     {
-        $len = strlen($value);
+        if(!is_string($value)) {
+            return false;
+        }
 
+        $len = strlen($value);
         return $len >= $this->min && $len <= $this->max;
     }
 }
