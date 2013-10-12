@@ -3,19 +3,21 @@
 namespace KsUtils\Validator;
 
 /**
- * Description of Required
- *
+ * Not empty Validator
  * @author kostya
  */
 class NotEmpty extends \KsUtils\Validator
 {
+    function __construct()
+    {
+        $this->setError("Must not be empty: %s");
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function check($value)
     {
         return !is_null($value) && trim($value) !== "";
-    }
-
-    public function getErrorMessage($errValue)
-    {
-        return "Не может быть пустым";
     }
 }
