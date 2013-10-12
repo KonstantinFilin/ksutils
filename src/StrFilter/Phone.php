@@ -19,12 +19,12 @@ class Phone implements \KsUtils\StrFilter
     {
         $str = preg_replace("|[\D+]|", "", $str);
 
-        if (strlen($str) == 11 && substr($str, 0, 1) == 7) {
+        if (strlen($str) == 11 && in_array(substr($str, 0, 1), array("7", "8"))) {
             $str = substr($str, 1);
         }
 
         $len2 = strlen($str);
-        
+
         return $len2 == 10 ? $str : "";
     }
 }

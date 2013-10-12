@@ -9,7 +9,7 @@ class Phone extends \KsUtils\Validator
 {
     function __construct()
     {
-        $this->setError("Wrong number format: %s");
+        $this->setError("Wrong phone number format: %s");
     }
 
     /**
@@ -20,6 +20,6 @@ class Phone extends \KsUtils\Validator
         $filter = new \KsUtils\StrFilter\Phone();
         $value = $filter->filter($value);
 
-        return preg_match("#\d{10}#", $value);
+        return (boolean) preg_match("#\d{10}#", $value);
     }
 }
