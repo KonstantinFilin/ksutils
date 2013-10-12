@@ -3,22 +3,23 @@
 namespace KsUtils\Validator;
 
 /**
- * Description of Phone
- *
- * @author kostya
+ * 10 digits phone validator
  */
 class Phone extends \KsUtils\Validator
 {
-    public function getErrorMessage($errValue)
+    function __construct()
     {
-        return "Неверный телефонный номер";
+        $this->setError("Wrong number format: %s");
     }
 
+    /**
+     * @inheritdoc
+     */
     public function check($value)
     {
-        $len = strlen($value);
+        $filter = new \KsUtils\StrFilter\Phone();
+        $value = $filter->filter($value);
 
-        return is_integer((int) $value)
-                && ($len == 10 || $len == 7);
+        return preg_match("#\d{10}#", $value);
     }
 }
