@@ -34,17 +34,39 @@
         }
 
         /**
-         * @covers KsUtils\Pager::getOnpage
-         * @covers KsUtils\Pager::setOnpage
+         * @covers KsUtils\Pager::setDefaults
          */
-        public function testGetOnpage()
+        public function testDefaults()
+        {
+            $this->assertEquals(1, $this->object->getPagesTotal());
+            $this->assertEquals(10, $this->object->getShowBy());
+            $this->assertEquals(0, $this->object->getItemsTotal());
+            $this->assertEquals(1, $this->object->getCurPage());
+            $this->assertEquals(array(), $this->object->getItems());
+        }
+        
+        /**
+         * @covers KsUtils\Pager::getShowBy
+         * @covers KsUtils\Pager::setShowBy
+         */
+        public function testGetShowBy()
         {
             $num1 = 10;
-            $this->object->setOnpage($num1);
-            $this->assertEquals($num1, $this->object->getOnpage());
+            $this->object->setShowBy($num1);
+            $this->assertEquals($num1, $this->object->getShowBy());
             $num2 = 15;
-            $this->object->setOnpage($num2);
-            $this->assertEquals($num2, $this->object->getOnpage());
+            $this->object->setShowBy($num2);
+            $this->assertEquals($num2, $this->object->getShowBy());
+            $num3 = 1500;
+            $this->object->setShowBy($num3);
+            $this->assertNotEquals($num3, $this->object->getShowBy());
+            $this->assertEquals(100, $this->object->getShowBy());
+            $num4 = 50;
+            $max = 30;
+            $this->object->setShowBy($num4);
+            $this->object->setShowByMax($max);
+            $this->assertNotEquals($num3, $this->object->getShowBy());
+            $this->assertEquals($max, $this->object->getShowBy());
         }
 
         /**
@@ -107,9 +129,50 @@
         {
             $num1 = 19;
             $this->object->setCurPage($num1);
+            $this->object->setPagesTotal($num1 + 5);
             $this->assertEquals($num1, $this->object->getCurPage());
             $num2 = 5;
             $this->object->setCurPage($num2);
-            $this->assertEquals($num2, $this->object->getCurPage());        }
+            $this->object->setPagesTotal($num2 + 2);
+            $this->assertEquals($num2, $this->object->getCurPage());     
+            $num3 = 4;
+            $this->object->setCurPage($num3);
+            $this->object->setPagesTotal($num3);
+            $this->assertEquals($num3, $this->object->getCurPage());
+            
+            $num4 = 30;
+            $max = 21;
+            $this->object->setCurPage($num4);
+            $this->object->setPagesTotal($max);
+            $this->assertEquals($max, $this->object->getCurPage());
+            $this->assertNotEquals($num4, $this->object->getCurPage());
+        }
+        
+        public function testDefaultRequestNames()
+        {
+            $curPage = 4;
+            $showBy = 25;
+            $_GET["p"] = $curPage;
+            $_GET["showBy"] = $showBy;
+            $p = new Pager();
+            
+            $this->assertEquals($curPage, $p->getCurPage());
+            $this->assertEquals($showBy, $p->getShowBy());
+        }
+        
+        public function testOtherRequestNames()
+        {
+            
+        }
+        
+        public function testRequestTypes()
+        {
+            
+        }
+        
+        public function testGetFrom()
+        {
+            
+        }
     }
 
