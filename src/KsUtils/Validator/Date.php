@@ -28,6 +28,7 @@ class Date extends \KsUtils\Validator
     public function check($value)
     {
         $dtObj = date_create_from_format($this->format, $value);
+
         return $dtObj !== false;
     }
 }

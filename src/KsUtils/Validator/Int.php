@@ -36,6 +36,7 @@ class Int extends \KsUtils\Validator
     public function check($value)
     {
         $val = intval($value);
+
         return preg_match("|^-?\d+$|", $value) && $val >= $this->min && $val <= $this->max;
     }
 }

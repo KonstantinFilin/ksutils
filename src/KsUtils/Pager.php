@@ -12,31 +12,31 @@ class Pager
      * @var integer
      */
     protected $pagesTotal;
-    
+
     /**
      * Number of the current page
      * @var integer
      */
     protected $curPage;
-    
+
     /**
      * Maximum items amount on one page
      * @var integer
      */
     protected $showBy;
-    
+
     /**
      * Maximum value for $showBy variable
      * @var integer
      */
     protected $showByMax;
-    
+
     /**
      * Total amount of items on all pages
      * @var integer
      */
     protected $itemsTotal;
-    
+
     /**
      * Items on the current page
      * @var array
@@ -45,39 +45,39 @@ class Pager
 
     /**
      * Class's constructor
-     * @param string $curPageParamName Name of the request parameter that 
+     * @param string $curPageParamName Name of the request parameter that
      *                  contains current page number. Default is "p".
-     * @param string $showByParamName Name of the request parameter that 
-     *                  contains maximum items amount on one page. Default is 
+     * @param string $showByParamName Name of the request parameter that
+     *                  contains maximum items amount on one page. Default is
      *                  "showBy"
-     * @param integer $inputType Request parameter type. One of the INPUT_* 
+     * @param integer $inputType Request parameter type. One of the INPUT_*
      *                  constant. Default is INPUT_GET
      */
-    function __construct($curPageParamName = "p", $showByParamName = "showBy", $inputType = null)
+    public function __construct($curPageParamName = "p", $showByParamName = "showBy", $inputType = null)
     {
         $this->fillFromParams($curPageParamName, $showByParamName, $inputType);
         $this->setDefaults();
     }
-    
+
     /**
      * Fills data from request parameters
-     * @param string $curPageParamName Name of the request parameter that 
+     * @param string $curPageParamName Name of the request parameter that
      *                  contains current page number
-     * @param string $showByParamName Name of the request parameter 
+     * @param string $showByParamName Name of the request parameter
      *                  that contains maximum items amount on one page
-     * @param integer $inputType Request parameter type. One of the 
+     * @param integer $inputType Request parameter type. One of the
      *                  INPUT_* constant. Default is INPUT_GET
      */
     protected function fillFromParams($curPageParamName, $showByParamName, $inputType = null)
     {
-        if(is_null($inputType)) {
+        if (is_null($inputType)) {
             $inputType = INPUT_GET;
         }
-        
+
         $this->curPage = filter_input($inputType, $curPageParamName, FILTER_SANITIZE_NUMBER_INT);
         $this->showBy = filter_input($inputType, $showByParamName, FILTER_SANITIZE_NUMBER_INT);
     }
-    
+
     /**
      * Sets default values for the class members
      */
@@ -91,17 +91,17 @@ class Pager
         if (!$this->curPage) {
             $this->curPage = 1;
         }
-        
+
         if (!$this->showBy) {
             $this->showBy = 10;
-        }        
+        }
     }
-    
+
     /**
      * Sets maximum value for showBy parameter
      * @param integer $showByMax Maximum value for showBy parameter
      */
-    public function setShowByMax($showByMax) 
+    public function setShowByMax($showByMax)
     {
         $this->showByMax = intval($showByMax);
     }
@@ -110,7 +110,7 @@ class Pager
      * Returns showBy value
      * @return integer Maximum items amount on one page
      */
-    public function getShowBy() 
+    public function getShowBy()
     {
         return $this->showBy > $this->showByMax ? $this->showByMax : $this->showBy;
     }
@@ -119,11 +119,11 @@ class Pager
      * Sets showBy value
      * @param integer $showBy Maximum items amount on one page
      */
-    public function setShowBy($showBy) 
+    public function setShowBy($showBy)
     {
         $this->showBy = intval($showBy);
     }
-    
+
     /**
      * Returns total items amount on all pages
      * @return integer Total items amount on all pages
@@ -141,9 +141,9 @@ class Pager
     {
         return $this->items;
     }
-    
+
     /**
-     * Returns total pages amount 
+     * Returns total pages amount
      * @return integer Number of pages
      */
     public function getPagesTotal()
@@ -195,7 +195,7 @@ class Pager
     {
         $this->curPage = $curPage;
     }
-    
+
     /**
      * Returns number of the first item on current page
      * @return integer Number of the first item on current page. 1-index based

@@ -8,7 +8,7 @@ namespace KsUtils\Validator;
  */
 class NotEmpty extends \KsUtils\Validator
 {
-    function __construct()
+    public function __construct()
     {
         $this->setError("Must not be empty: %s");
     }

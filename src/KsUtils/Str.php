@@ -9,8 +9,8 @@ class Str
 {
     /**
      * Checks if string ends with another string
-     * @param string $needle Supposed end
-     * @param string $str Tested string
+     * @param  string  $needle Supposed end
+     * @param  string  $str    Tested string
      * @return boolean TRUE if string ends with another string, FALSE
      *              otherwise
      */
@@ -23,8 +23,8 @@ class Str
 
     /**
      * Returns a random string
-     * @param int $charsAmount String's length
-     * @param string $chars Chars in the random string. Default is a-z,
+     * @param int    $charsAmount String's length
+     * @param string $chars       Chars in the random string. Default is a-z,
      *          digits and "_" (underscore)
      * @return string Random string with specified length
      */
@@ -55,8 +55,8 @@ class Str
     /**
      * Returns substring after last occurance of $char. Search is
      * case insensitive
-     * @param string $char What to search
-     * @param string $str Where to search
+     * @param  string $char What to search
+     * @param  string $str  Where to search
      * @return string Resulting string
      */
     public static function getSubstrAfterLast($char, $str)
@@ -68,7 +68,7 @@ class Str
 
     /**
      * Replaces cyrillic chars to latin
-     * @param string $string Non-latin string
+     * @param  string $string Non-latin string
      * @return string Latin string
      */
     public static function translit($string)
@@ -109,8 +109,8 @@ class Str
 
     /**
      * Returns a slugabized string (for example in url usage)
-     * @param string $str Unslugabized string
-     * @param string $defaultChar Replacement for wrong chars
+     * @param  string $str         Unslugabized string
+     * @param  string $defaultChar Replacement for wrong chars
      * @return string Slugabized string. Contains only chars: a-z,0-9,-,_
      */
     public static function slugabize($str, $defaultChar = "")
@@ -129,7 +129,7 @@ class Str
 
     /**
      * Encodes variable to a json and utf codes into russian chars
-     * @param mixed $data The value being encoded. Can be any type except a resource.
+     * @param  mixed  $data The value being encoded. Can be any type except a resource.
      * @return string String containing the JSON representation of value
      */
     public static function jsonEncode($data)
@@ -156,7 +156,7 @@ class Str
 
     /**
      * Use whitespace to format json string
-     * @param string $json Unformatted json string
+     * @param  string $json Unformatted json string
      * @return string Formatted json string
      */
     public static function jsonBeautify($json)
@@ -208,5 +208,33 @@ class Str
         }
 
         return $result;
+    }
+
+    /**
+     * Removes all underscores and uppercase next char (user_id_key -> userIdKey)
+     * @param  string $str Source string
+     * @return string Destination string
+     */
+    public static function undescoresToUpper($str)
+    {
+        $len = strlen($str);
+        $uppFlag = false;
+
+        $ret = array($str[0]);
+
+        for ($i = 1; $i < $len; $i++) {
+            $chr = $str[$i];
+
+            if ($chr == "_") {
+                $uppFlag = true;
+            } elseif ($uppFlag) {
+                $ret[] = strtoupper($chr);
+                $uppFlag = false;
+            } else {
+                $ret[] = $chr;
+            }
+        }
+
+        return implode("", $ret);
     }
 }

@@ -7,7 +7,7 @@ namespace KsUtils\Validator;
  */
 class Phone extends \KsUtils\Validator
 {
-    function __construct()
+    public function __construct()
     {
         $this->setError("Wrong phone number format: %s");
     }

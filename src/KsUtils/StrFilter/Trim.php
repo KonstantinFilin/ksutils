@@ -11,8 +11,8 @@ class Trim implements \KsUtils\StrFilter
 {
     /**
      * Strips all trailing whitespaces
-     * @param string|array $str Source string
-     * @return string Fiiltered string
+     * @param  string|array $str Source string
+     * @return string       Fiiltered string
      */
     public function filter($str)
     {

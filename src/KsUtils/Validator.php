@@ -15,7 +15,7 @@ abstract class Validator
 
     /**
      * Returns error message
-     * @param mixed $wrongValue Value not passed validation
+     * @param  mixed  $wrongValue Value not passed validation
      * @return string Error message
      */
     public function getError($wrongValue)
@@ -37,7 +37,7 @@ abstract class Validator
 
     /**
      * Checks a value
-     * @param string $value String to check
+     * @param  string  $value String to check
      * @return boolean True if value is valid and False otherwise
      */
     abstract public function check($value);

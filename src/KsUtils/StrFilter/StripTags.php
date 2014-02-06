@@ -9,8 +9,8 @@ class StripTags implements \KsUtils\StrFilter
 {
     /**
      * Clears html tags from source string
-     * @param string|array $str Source string
-     * @return string Filtered string
+     * @param  string|array $str Source string
+     * @return string       Filtered string
      */
     public function filter($str)
     {

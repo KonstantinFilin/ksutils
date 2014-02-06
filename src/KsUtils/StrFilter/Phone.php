@@ -12,7 +12,7 @@ class Phone implements \KsUtils\StrFilter
     /**
      * Returns only digits from source string. If string is
      * 11 chars length and first char is 7 then that char is stripped
-     * @param string $str Source string
+     * @param  string $str Source string
      * @return string Filtered string
      */
     public function filter($str)

@@ -36,11 +36,12 @@ class StrLenRange extends \KsUtils\Validator
      */
     public function check($value)
     {
-        if(!is_string($value)) {
+        if (!is_string($value)) {
             return false;
         }
 
         $len = strlen($value);
+
         return $len >= $this->min && $len <= $this->max;
     }
 }
