@@ -127,8 +127,20 @@
                 array("abcDefGhi", "abcDefGhi"),
                 array("abc_def_ghi", "abcDefGhi"),
                 array("abc_def_ghi_", "abcDefGhi"),
-                array("_abc_def_ghi", "abcDefGhi"),
-                array("_abc_def_ghi_", "abcDefGhi")
+                array("_abc_def_ghi", "AbcDefGhi"),
+                array("_abc_def_ghi_", "AbcDefGhi")
+            );
+        }
+        
+        public function testUpperToUndescoresDataProvider()
+        {
+            return array(
+                array("", ""),
+                array("abc", "abc"),
+                array("abc_def_ghi", "abc_def_ghi"),
+                array("abcDefGhi", "abc_def_ghi"),
+                array("abcDefGhi_", "abc_def_ghi_"),
+                array("AbcDefGhi", "_abc_def_ghi"),
             );
         }
         
@@ -141,6 +153,18 @@
             $this->assertEquals(
                 $expected, 
                 \KsUtils\Str::undescoresToUpper($input)
+            );
+        }
+        
+        /**
+         * @covers KsUtils\Str::upperToUnderscores
+         * @dataProvider testUpperToUndescoresDataProvider
+         */
+        public function testUpperToUndescores($input, $expected)
+        {
+            $this->assertEquals(
+                $expected, 
+                \KsUtils\Str::upperToUnderscores($input)
             );
         }
     }

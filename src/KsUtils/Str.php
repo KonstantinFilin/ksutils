@@ -220,9 +220,9 @@ class Str
         $len = strlen($str);
         $uppFlag = false;
 
-        $ret = array($str[0]);
+        $ret = array();
 
-        for ($i = 1; $i < $len; $i++) {
+        for ($i = 0; $i < $len; $i++) {
             $chr = $str[$i];
 
             if ($chr == "_") {
@@ -233,6 +233,27 @@ class Str
             } else {
                 $ret[] = $chr;
             }
+        }
+
+        return implode("", $ret);
+    }
+    
+    /**
+     * Replaces all uppercase chars to lowercase char with preceeding underscore (userIdKey -> user_id_key)
+     * @param  string $str Source string
+     * @return string Destination string
+     */
+    public static function upperToUnderscores($str)
+    {
+        $ret = array();
+        $len = strlen($str);
+        $uppChars = "ABCDEFGHIJKLMNOQPRSTUVWXYZ";
+
+        for ($i = 0; $i < $len; $i++) {
+            $chr = $str[$i];
+            $ret[] = strstr($uppChars, $chr) !== false
+                    ? "_" . strtolower($chr)
+                    : $chr;
         }
 
         return implode("", $ret);
