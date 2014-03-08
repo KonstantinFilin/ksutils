@@ -55,4 +55,38 @@ class Dt
     {
         return self::convert($dtStr, $formatIn, $formatOut);
     }
+
+    /**
+     * Returns next date of given date in given format
+     * @param string $dt Source date
+     * @param string $format Source date format
+     * @return string Destination date or empty string if source date can't be parsed
+     */
+    public static function getNextDay($dt, $format = "Y-m-d")
+    {
+        $dtObj = \DateTime::createFromFormat($format, $dt);
+
+        if (!$dtObj) {
+            return "";
+        }
+
+        return $dtObj->add(date_interval_create_from_date_string('1 days'))->format($format);
+    }
+
+    /**
+     * Returns previous date of given date in given format
+     * @param string $dt Source date
+     * @param string $format Source date format
+     * @return string Destination date or empty string if source date can't be parsed
+     */
+    public static function getPrevDay($dt, $format = "Y-m-d")
+    {
+        $dtObj = \DateTime::createFromFormat($format, $dt);
+
+        if (!$dtObj) {
+            return "";
+        }
+
+        return $dtObj->sub(date_interval_create_from_date_string('1 days'))->format($format);
+    }
 }
