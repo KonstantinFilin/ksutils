@@ -237,7 +237,7 @@ class Str
 
         return implode("", $ret);
     }
-    
+
     /**
      * Replaces all uppercase chars to lowercase char with preceeding underscore (userIdKey -> user_id_key)
      * @param  string $str Source string

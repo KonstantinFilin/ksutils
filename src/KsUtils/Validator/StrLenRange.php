@@ -19,29 +19,36 @@ class StrLenRange extends \KsUtils\Validator
      */
     protected $max;
 
+    /**
+     * Class contructor
+     * @param integer $min Minimum string length
+     * @param integer $max Maximum string length
+     */
     public function __construct($min, $max)
     {
         $this->min = $min;
         $this->max = $max;
 
-        $this->error = sprintf(
+        $errMes = sprintf(
             "Must be string with length between %d and %d chars, checked value: %%s",
             $this->min,
             $this->max
         );
+
+        $this->setErrorTpl($errMes);
     }
 
     /**
      * @inheritdoc
      */
-    public function check($value)
+    protected function hasError($value)
     {
         if (!is_string($value)) {
-            return false;
+            return true;
         }
 
         $len = strlen($value);
 
-        return $len >= $this->min && $len <= $this->max;
+        return $len < $this->min || $len > $this->max;
     }
 }

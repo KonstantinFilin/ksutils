@@ -4,8 +4,6 @@ namespace KsUtils\StrFilter;
 
 /**
  * Filters all non digits
- *
- * @author ksf
  */
 class StripNonDigit implements \KsUtils\StrFilter
 {

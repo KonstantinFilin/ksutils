@@ -14,25 +14,44 @@ abstract class Validator
     protected $error;
 
     /**
+     * Error message template when value is not valid
+     * @var string
+     */
+    protected $errorTpl;
+
+    /**
      * Returns error message
      * @param  mixed  $wrongValue Value not passed validation
      * @return string Error message
      */
-    public function getError($wrongValue)
+    public function getError()
     {
-        return sprintf(
-            $this->error,
-            $wrongValue
-        );
+        return $this->error;
     }
 
     /**
      * Sets error message for validator
      * @param string $errorMessage Error message
      */
-    public function setError($errorMessage)
+    public function setErrorTpl($errorMessage)
     {
-        $this->error = $errorMessage;
+        $this->errorTpl = $errorMessage;
+    }
+
+    /**
+     * Checks a value and sets error message
+     * @param  mixed   $value Value to check
+     * @return boolean True if value is valid and False otherwise
+     */
+    public function check($value)
+    {
+        if ($this->hasError($value)) {
+            $this->error = sprintf($this->errorTpl, (string) $value);
+
+            return false;
+        }
+
+        return true;
     }
 
     /**
@@ -40,5 +59,5 @@ abstract class Validator
      * @param  string  $value String to check
      * @return boolean True if value is valid and False otherwise
      */
-    abstract public function check($value);
+    abstract protected function hasError($value);
 }

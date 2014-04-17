@@ -8,16 +8,19 @@ namespace KsUtils\Validator;
  */
 class NotEmpty extends \KsUtils\Validator
 {
+    /**
+     * Class constructor
+     */
     public function __construct()
     {
-        $this->setError("Must not be empty: %s");
+        $this->setErrorTpl("Must not be empty: [%s]");
     }
 
     /**
      * @inheritdoc
      */
-    public function check($value)
+    protected function hasError($value)
     {
-        return !is_null($value) && trim($value) !== "";
+        return is_null($value) || trim($value) === "";
     }
 }

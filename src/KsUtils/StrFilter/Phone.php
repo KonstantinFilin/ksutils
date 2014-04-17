@@ -4,8 +4,6 @@
 
 /**
  * Filter for the phone number
- *
- * @author kostya
  */
 class Phone implements \KsUtils\StrFilter
 {

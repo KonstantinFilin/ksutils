@@ -4,8 +4,6 @@ namespace KsUtils\StrFilter;
 
 /**
  * Filter for stripping trailing whitespaces
- *
- * @author ksf
  */
 class Trim implements \KsUtils\StrFilter
 {

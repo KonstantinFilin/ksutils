@@ -45,37 +45,14 @@ class Pager
 
     /**
      * Class's constructor
-     * @param string $curPageParamName Name of the request parameter that
-     *                  contains current page number. Default is "p".
-     * @param string $showByParamName Name of the request parameter that
-     *                  contains maximum items amount on one page. Default is
-     *                  "showBy"
-     * @param integer $inputType Request parameter type. One of the INPUT_*
-     *                  constant. Default is INPUT_GET
+     * @param string $curPage Current page number
+     * @param string $showBy  Maximum items amount on the page
      */
-    public function __construct($curPageParamName = "p", $showByParamName = "showBy", $inputType = null)
+    public function __construct($curPage = 1, $showBy = 10)
     {
-        $this->fillFromParams($curPageParamName, $showByParamName, $inputType);
+        $this->curPage = $curPage;
+        $this->showBy = $showBy;
         $this->setDefaults();
-    }
-
-    /**
-     * Fills data from request parameters
-     * @param string $curPageParamName Name of the request parameter that
-     *                  contains current page number
-     * @param string $showByParamName Name of the request parameter
-     *                  that contains maximum items amount on one page
-     * @param integer $inputType Request parameter type. One of the
-     *                  INPUT_* constant. Default is INPUT_GET
-     */
-    protected function fillFromParams($curPageParamName, $showByParamName, $inputType = null)
-    {
-        if (is_null($inputType)) {
-            $inputType = INPUT_GET;
-        }
-
-        $this->curPage = filter_input($inputType, $curPageParamName, FILTER_SANITIZE_NUMBER_INT);
-        $this->showBy = filter_input($inputType, $showByParamName, FILTER_SANITIZE_NUMBER_INT);
     }
 
     /**
@@ -87,14 +64,6 @@ class Pager
         $this->showByMax = 100;
         $this->itemsTotal = 0;
         $this->items = array();
-
-        if (!$this->curPage) {
-            $this->curPage = 1;
-        }
-
-        if (!$this->showBy) {
-            $this->showBy = 10;
-        }
     }
 
     /**

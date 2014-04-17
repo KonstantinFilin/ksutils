@@ -7,19 +7,22 @@ namespace KsUtils\Validator;
  */
 class Phone extends \KsUtils\Validator
 {
+    /**
+     * Class contructor
+     */
     public function __construct()
     {
-        $this->setError("Wrong phone number format: %s");
+        $this->setErrorTpl("Wrong phone number format: %s");
     }
 
     /**
      * @inheritdoc
      */
-    public function check($value)
+    protected function hasError($value)
     {
         $filter = new \KsUtils\StrFilter\Phone();
         $value = $filter->filter($value);
 
-        return (boolean) preg_match("#\d{10}#", $value);
+        return !preg_match("#\d{10}#", $value);
     }
 }

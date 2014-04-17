@@ -58,8 +58,8 @@ class Dt
 
     /**
      * Returns next date of given date in given format
-     * @param string $dt Source date
-     * @param string $format Source date format
+     * @param  string $dt     Source date
+     * @param  string $format Source date format
      * @return string Destination date or empty string if source date can't be parsed
      */
     public static function getNextDay($dt, $format = "Y-m-d")
@@ -75,8 +75,8 @@ class Dt
 
     /**
      * Returns previous date of given date in given format
-     * @param string $dt Source date
-     * @param string $format Source date format
+     * @param  string $dt     Source date
+     * @param  string $format Source date format
      * @return string Destination date or empty string if source date can't be parsed
      */
     public static function getPrevDay($dt, $format = "Y-m-d")

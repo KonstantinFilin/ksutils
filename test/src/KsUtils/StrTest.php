@@ -110,7 +110,7 @@
          */
         public function testJsonBeautify()
         {
-            $source = "{var: 1, var2: def}";
+            $source = '{var: 1, var2: def, var3: "a long string", var4: { a: aaa, b: bbb, c: ccc}}';
             $dest = \KsUtils\Str::jsonBeautify($source);
             $this->assertNotEmpty($dest);
             $this->assertEquals(

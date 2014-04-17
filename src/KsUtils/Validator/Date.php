@@ -19,16 +19,16 @@ class Date extends \KsUtils\Validator
     public function __construct($format = "Y-m-d")
     {
         $this->format = $format;
-        $this->error = "Wrong date: %s";
+        $this->setErrorTpl("Wrong date: %s");
     }
 
     /**
      * @inheritdoc
      */
-    public function check($value)
+    protected function hasError($value)
     {
         $dtObj = date_create_from_format($this->format, $value);
 
-        return $dtObj !== false;
+        return !$dtObj;
     }
 }

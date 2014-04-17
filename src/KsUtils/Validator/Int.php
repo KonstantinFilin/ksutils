@@ -19,24 +19,29 @@ class Int extends \KsUtils\Validator
      */
     protected $max;
 
+    /**
+     * Class constructor
+     * @param integer $min Minimum available value
+     * @param integer $max Maximum available value
+     */
     public function __construct($min = 1, $max = 1000000)
     {
         $this->min = $min;
         $this->max = $max;
-        $this->error = sprintf(
+        $errorMes = sprintf(
             "Must be a number between %d and %d, checked value: %%s",
             $this->min,
             $this->max
         );
+
+        $this->setErrorTpl($errorMes);
     }
 
     /**
      * @inheritdoc
      */
-    public function check($value)
+    protected function hasError($value)
     {
-        $val = intval($value);
-
-        return preg_match("|^-?\d+$|", $value) && $val >= $this->min && $val <= $this->max;
+        return !(preg_match("|^-?\d+$|", $value) && $value >= $this->min && $value <= $this->max);
     }
 }

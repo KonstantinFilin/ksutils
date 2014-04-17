@@ -4,8 +4,6 @@ namespace KsUtils\StrFilter;
 
 /**
  * Filter for the date string in russian format
- *
- * @author kostya
  */
 class DtFromRus implements \KsUtils\StrFilter
 {
