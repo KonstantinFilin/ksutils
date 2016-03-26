@@ -89,4 +89,24 @@ class Dt
 
         return $dtObj->sub(date_interval_create_from_date_string('1 days'))->format($format);
     }
+    
+    /**
+     * Creates an array of consecutive dates
+     * @param string $from Starting date 
+     * @param integer $amount Range's length
+     * @param string $dtFormat Format of starting and resulting dates, default: Y-m-d
+     * @return array List of dates
+     */
+    public static function createDateRande($from, $amount, $dtFormat='Y-m-d')
+    {
+        $range = [ $from ];
+        $curDt = $from;
+        
+        for($i=1; $i<$amount; $i++) {
+            $curDt = \KsUtils\Dt::getNextDay($curDt, $dtFormat);
+            $range[] = $curDt;
+        }
+        
+        return $range;
+    }
 }
